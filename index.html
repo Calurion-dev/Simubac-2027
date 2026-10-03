@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur Bac 2026</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <header class="app-header">
+      <h1>🎓 Simulateur Bac 2026</h1>
+      <button class="btn btn-sm btn-outline" onclick="resetAll()" title="Réinitialiser">↺</button>
+    </header>
+
+    <div id="step-filiere">
+      <h2>Choisis ta filière</h2>
+      <div class="filiere-grid">
+        <div class="filiere-card" data-filiere="general">
+          <div class="filiere-icon">📚</div>
+          <h3>Bac Général</h3>
+          <p>Spécialités, tronc commun, Grand oral</p>
+          <span class="filiere-badge">40% CC · 60% Terminales</span>
+        </div>
+        <div class="filiere-card" data-filiere="technologique">
+          <div class="filiere-icon">⚙️</div>
+          <h3>Bac Technologique</h3>
+          <p>STMG, STI2D, ST2S, STL, STD2A…</p>
+          <span class="filiere-badge">40% CC · 60% Terminales</span>
+        </div>
+        <div class="filiere-card" data-filiere="professionnel">
+          <div class="filiere-icon">🔧</div>
+          <h3>Bac Professionnel</h3>
+          <p>Épreuves générales et professionnelles</p>
+          <span class="filiere-badge">Spécialités variables</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="simulator" class="hidden">
+      <div class="step-indicator" id="progress-bar"></div>
+      <button class="btn btn-link" onclick="backToFiliere()">← Changer de filière</button>
+
+      <div class="simulator-layout">
+        <div id="form-panel"></div>
+        <div id="results-panel" class="results-panel">
+          <div class="result-card">
+            <p style="color:#999;">Saisis tes notes pour voir le résultat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer">
+      Coefficients officiels Bac 2026 — Données sauvegardées localement
+    </footer>
+  </div>
+
+  <script src="js/data/coefficients.js"></script>
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/whatif.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
